@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Firstscreen extends StatelessWidget{
+
+// screen to show what tasks the algorithm says
+
+class Tasks extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(

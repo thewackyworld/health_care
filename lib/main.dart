@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './Firstscreen.dart';
-import './Secondscreen.dart';
+import './Tasks.dart';
+import './Dashboard.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         length: 2,
         child: Scaffold(
           appBar: PreferredSize(
-            preferredSize: Size.fromHeight(50.0),
+            preferredSize: Size.fromHeight(90.0),
             child: AppBar(
             backgroundColor: Colors.redAccent,
             elevation: 0,
@@ -42,10 +42,39 @@ class MyApp extends StatelessWidget {
           ),
             body: TabBarView(
               children: [
-                Firstscreen(),
-                Secondscreen(),
+                Tasks(),
+                Dashboard(),
               ]
               ),
+          
+          drawer: Drawer(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                const DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Colors.redAccent,
+                  ),
+                  child: Text("Health Up"),
+                ),
+                ListTile(
+                  title: const Text("Contact Us"),
+                  onTap: () {
+                    // Update app
+                    Navigator.pop(context);
+                  },
+                ),
+                ListTile(
+                  title: const Text("Log Out"),
+                  onTap: () {
+                    //sign out user
+                    Navigator.pop(context);
+                  },
+                )
+              ],
+            ),
+          ),
+
           ),
       ),
     );
